@@ -1,14 +1,31 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-fun main() {
-    val name = "Kotlin"
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    println("Hello, " + name + "!")
+// Main.kt
 
-    for (i in 1..5) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        println("i = $i")
+fun main() {
+    println("Calculadora de IMC")
+
+    // Solicitar o peso do usuário
+    print("Digite seu peso (kg): ")
+    val peso = readLine()?.toDoubleOrNull()
+
+    // Solicitar a altura do usuário
+    print("Digite sua altura (m): ")
+    val altura = readLine()?.toDoubleOrNull()
+
+    // Verificar se os dados são válidos
+    if (peso != null && altura != null) {
+        // Criar uma instância da classe IMC
+        val calculadoraIMC = IMC(peso, altura)
+
+        // Calcular o IMC e obter a categoria
+        val imc = calculadoraIMC.calcularIMC()
+        val categoria = calculadoraIMC.categoriaIMC()
+
+        // Exibir o IMC e a categoria
+        println("Seu IMC é: %.2f".format(imc))
+        println("Categoria: $categoria")
+    } else {
+        println("Dados inválidos. Por favor, insira valores válidos.")
     }
 }
+
+
