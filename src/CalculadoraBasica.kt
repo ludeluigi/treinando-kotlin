@@ -31,6 +31,6 @@ fun main() {
 
         println("Resultado: $num1 $operacao $num2 = $resultado")
     } else {
-        println("Erro: Entrada inválida. Digite números válidos")
+        println("Erro: Entrada inválida. Digite números válidos!")
     }
 }
