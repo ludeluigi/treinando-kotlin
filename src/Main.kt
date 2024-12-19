@@ -13,16 +13,22 @@ fun main() {
 
     // Verificar se os dados são válidos
     if (peso != null && altura != null) {
-        // Criar uma instância da classe IMC
-        val calculadoraIMC = IMC(peso, altura)
+        // Verificar se foi digitado um valor negativo
+        if(peso <= 0 || altura <= 0){
+            println("Peso e altura devem ser valores positivos.")
+        } else{
 
-        // Calcular o IMC e obter a categoria
-        val imc = calculadoraIMC.calcularIMC()
-        val categoria = calculadoraIMC.categoriaIMC()
+            // Criar uma instância da classe IMC
+            val calculadoraIMC = IMC(peso, altura)
 
-        // Exibir o IMC e a categoria
-        println("Seu IMC é: %.2f".format(imc))
-        println("Categoria: $categoria")
+            // Calcular o IMC e obter a categoria
+            val imc = calculadoraIMC.calcularIMC()
+            val categoria = calculadoraIMC.categoriaIMC()
+
+            // Exibir o IMC e a categoria
+            println("Seu IMC é: %.2f".format(imc))
+            println("Categoria: $categoria")
+    }
     } else {
         println("Dados inválidos. Por favor, insira valores válidos.")
     }

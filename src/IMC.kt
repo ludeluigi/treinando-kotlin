@@ -1,5 +1,5 @@
 class IMC (val peso: Double, val altura: Double) {
-    fun calcularIMC(): Double{
+    fun calcularIMC(): Double {
         return peso / (altura * altura)
     }
 
